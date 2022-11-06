@@ -4,6 +4,7 @@ import "../styles/globals.css";
 import "../styles/editor.css";
 
 function MyApp({Component, pageProps}: AppProps) {
+  // @ts-ignore
   return <Component {...pageProps} />;
 }
 
