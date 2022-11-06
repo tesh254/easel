@@ -81,7 +81,7 @@ function Editor() {
     }
   }
 
-  function handleCanvasClick(event: fabric.IEvent) {
+  function handleCanvasClick() {
     if (mousePosition.current.object) {
       switch (mousePosition.current.object) {
         case "square":
@@ -93,7 +93,7 @@ function Editor() {
           changeToDefault()
           break;
         case "text":
-          addTextBoxObject();
+          addTextObject();
           changeToDefault()
           break;
         default:
@@ -121,10 +121,10 @@ function Editor() {
     const circle = new fabric.Circle({
       left: mousePosition.current.x,
       top: mousePosition.current.y,
-      fill: "red",
-      width: 100,
-      height: 100,
-      angle: 0,
+      // type: "circle",
+      radius: 100,
+      fill: "#e40017",
+      name: "Circle",
     });
 
     if (canvas.current) {
@@ -132,22 +132,27 @@ function Editor() {
     }
   }
 
-  function addTextBoxObject() {
-    const textBox = new fabric.Textbox("This is text",{
-      text: "",
-      left: mousePosition.current.x,
-      top: mousePosition.current.y,
-    });
+  // function addTextBoxObject() {
+  //   const textBox = new fabric.Textbox("This is text",{
+  //     text: "",
+  //     left: mousePosition.current.x,
+  //     top: mousePosition.current.y,
+  //   });
 
-    if (canvas.current) {
-      canvas.current.add(textBox);
-    }
-  }
+  //   if (canvas.current) {
+  //     canvas.current.add(textBox);
+  //   }
+  // }
 
   function addTextObject() {
     const text = new fabric.Text("This is text", {
-
+      left: mousePosition.current.x,
+      top: mousePosition.current.y,
     })
+
+    if (canvas.current) {
+      canvas.current.add(text);
+    }
   }
 
   useEffect(() => {
