@@ -1,15 +1,22 @@
 module.exports = {
-  purge: ["./components/**/*.{js,ts,jsx,tsx}", "./pages/**/*.{js,ts,jsx,tsx}"],
-  darkMode: "media", // 'media' or 'class'
+  content: [
+    "./app/**/*.{js,ts,jsx,tsx}",
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
     extend: {
       colors: {
-        "accent-1": "#333"
+        "easel-darky": "#393939",
+        "easel-balge-light": "#FAD6A5",
+        "easel-sage-dark": "#61764B",
+        "easel-sage-light": "#9BA17B",
+        "easel-balge-dark":  "#CFB997",
+        "easel-light": "#EEEEEE",
+        "easel-pink": "#FFE1E1"
       }
-    }
+    },
   },
-  variants: {
-    extend: {}
-  },
-  plugins: []
-};
+  plugins: [],
+  mode: "jit"
+}
